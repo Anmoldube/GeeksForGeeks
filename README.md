@@ -1,2 +1,2 @@
 # geeksforgeeks
-questions of gfg
+solution of gfg
