@@ -1,0 +1,19 @@
+import java.util.*;
+public class Sample{
+    public static boolean Palindrome(String str){
+        int spt=0;
+        int ept=str.length()-1;
+        while(spt<=ept){
+            if(str.charAt(spt)!=str.charAt(ept)) return false;
+            spt++;
+            ept--;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        System.out.println(Palindrome(str));
+        sc.close();
+    }
+}
