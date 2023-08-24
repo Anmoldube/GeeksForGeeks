@@ -1,0 +1,16 @@
+class Solution {
+    float[] streamAvg(int[] arr, int n) {
+        float[] ans = new float[n]; // Declare a float array 'ans' with the same size as 'arr'.
+        int sum = 0; // Initialize a variable 'sum' to keep track of the running sum.
+        int j = 1; // Initialize a variable 'j' to keep track of the divisor.
+        
+        for (int i = 0; i < n; i++) {
+            sum += arr[i]; // Add the current element to the running sum.
+            float avg = (float) sum / j; // Calculate the average by dividing the sum by 'j' and casting to float.
+            j++; // Increment the divisor for the next iteration.
+            ans[i] = avg; // Store the calculated average in the 'ans' array.
+        }
+        
+        return ans; // Return the 'ans' array containing the calculated averages.
+    }
+}
