@@ -1,2 +1,2 @@
-# geeksforgeeks
+# GeeksForGeeks
 solution of gfg
