@@ -1,0 +1,51 @@
+//{ Driver Code Starts
+//Initial Template for Java
+import java.util.*;
+import java.io.*;
+class GFG {
+    public static void main(String args[]) throws IOException {
+        BufferedReader read =
+            new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(read.readLine());
+        while (t-- > 0) {
+            long n = Integer.parseInt(read.readLine());
+            Solution ob = new Solution();
+
+            System.out.println(ob.isSumPalindrome(n));
+        }
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+
+public class Solution {
+    // Function to reverse the digits of a number.
+    public long reverseDigits(long num) {
+        long revNum = 0;
+        while (num > 0) {
+            revNum = revNum * 10 + num % 10;
+            num = num / 10;
+        }
+        return revNum;
+    }
+
+    /* Function to check whether the number is palindrome or not */
+    public boolean isPalindrome(long num) {
+        return (reverseDigits(num) == num);
+    }
+
+    // Function to find palindrome by adding the reverse of the number to itself.
+    public long isSumPalindrome(long n) {
+        int count = 0;
+        while (!isPalindrome(n) && count < 5) {
+            long k = reverseDigits(n);
+            n += k;
+            count++;
+        }
+        if (isPalindrome(n)) return n;
+        return -1;
+    }
+}
