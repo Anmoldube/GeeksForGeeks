@@ -1,0 +1,58 @@
+//{ Driver Code Starts
+//Initial Template for Java
+
+import java.io.*;
+import java.util.*;
+
+class GFG
+{
+    public static void main(String args[])throws IOException
+    {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- > 0)
+        {
+            String s;
+            s = sc.next();
+           
+            Solution ob = new Solution();
+            
+            System.out.println(ob.modify(s));    
+        }
+    }
+}
+// } Driver Code Ends
+
+
+//User function Template for Java
+
+class Solution {
+    String modify(String s) {
+        char[] arr = s.toCharArray();
+        int i = 0;
+        int j = s.length() - 1;
+        String vowels = "aeiouAEIOU";
+        while (i < j) {
+            while (i < j) {
+                char ch = arr[i];
+                if (vowels.indexOf(ch) != -1)
+                    break;
+                i++;
+            }
+            while (i < j) {
+                char ch = arr[j];
+                if (vowels.indexOf(ch) != -1)
+                    break;
+                j--;
+            }
+            if (i < j) {
+                char temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+        return new String(arr);
+    }
+}
