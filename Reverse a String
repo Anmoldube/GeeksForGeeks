@@ -23,5 +23,10 @@ class Solution {
     static String revStr(String S) {
         StringBuilder reversed = new StringBuilder(S);
         return reversed.reverse().toString();
+              OR
+String str = "";
+for(int i = S.length()-1;i>=0;i--){
+str = str+S.charAt(i);
+return str;
     }
 }
