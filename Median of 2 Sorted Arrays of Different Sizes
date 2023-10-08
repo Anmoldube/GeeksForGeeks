@@ -1,0 +1,25 @@
+class GFG {
+    static double medianOfArrays(int n, int m, int a[], int b[]) {
+        int a1 = a.length;
+        int b1 = b.length;
+        int c1 = a1 + b1;
+        int[] c = new int[c1];
+
+        // Copy elements from 'a' and 'b' into 'c'
+        System.arraycopy(a, 0, c, 0, a1);
+        System.arraycopy(b, 0, c, a1, b1);
+
+        Arrays.sort(c); // Sort the merged array 'c'
+
+        int N = c.length;
+
+        if (N % 2 == 0) {
+            int mid1 = N / 2;
+            int mid2 = mid1 - 1;
+            return (double) (c[mid1] + c[mid2]) / 2.0;
+        } else {
+            int mid = N / 2;
+            return (double) c[mid];
+        }
+    }
+}
